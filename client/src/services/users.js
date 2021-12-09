@@ -51,6 +51,16 @@ export const getUser = async (id) => {
   }
 }
 
+export const getUserJams = async (id) => {
+  try {
+    const res = await api.get(`/users/${id}/jams`)
+    return res.data
+  } catch (error) {
+    console.error(error)
+    throw error
+  }
+}
+
 export const getCart = async (id) => {
   try {
     const res = await api.get(`/users/${id}/cart`)

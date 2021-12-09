@@ -1,7 +1,7 @@
-import { NavLink } from "react-router-dom";
-import "./Nav.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Navbar, NavDropdown } from "react-bootstrap";
+import { NavLink } from "react-router-dom"
+import "./Nav.css"
+import "bootstrap/dist/css/bootstrap.min.css"
+import { Navbar, NavDropdown } from "react-bootstrap"
 
 export default function NavMenu(props) {
   return (
@@ -17,12 +17,8 @@ export default function NavMenu(props) {
         className="justify-content-end"
       >
         <NavDropdown title="products" id="products-dropdown">
-          <NavDropdown.Item href="/">
-            premium
-          </NavDropdown.Item>
-          <NavDropdown.Item href="/jams">
-            jams list
-          </NavDropdown.Item>
+          <NavDropdown.Item href="/">premium</NavDropdown.Item>
+          <NavDropdown.Item href="/jams">jams list</NavDropdown.Item>
         </NavDropdown>
         <NavLink className="nav-link" to="/jams/new">
           create
@@ -33,25 +29,18 @@ export default function NavMenu(props) {
         <NavDropdown title="account" id="products-dropdown">
           {props.user ? (
             <>
-              <NavDropdown.Item href="/cart">
-                cart
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/signout">
-                sign out
-              </NavDropdown.Item>
+              <NavDropdown.Item href="/cart">cart</NavDropdown.Item>
+              <NavDropdown.Item href="/profile">profile</NavDropdown.Item>
+              <NavDropdown.Item href="/signout">sign out</NavDropdown.Item>
             </>
           ) : (
             <>
-              <NavDropdown.Item href="/signin">
-                  sign in
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/signup">
-                  sign up
-              </NavDropdown.Item>
+              <NavDropdown.Item href="/signin">sign in</NavDropdown.Item>
+              <NavDropdown.Item href="/signup">sign up</NavDropdown.Item>
             </>
           )}
         </NavDropdown>
       </Navbar.Collapse>
     </Navbar>
-  );
+  )
 }
